@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.phenopackets</groupId>
+    <artifactId>phenopackets-protobuf-parent</artifactId>
+    <version>0.0.6-SNAPSHOT</version>
+  </parent>
+  <groupId>org.phenopackets</groupId>
+  <artifactId>phenopackets-protobuf-wire</artifactId>
+  <packaging>jar</packaging>
+
+  <name>phenopacket-protobuf-wire</name>
+  <description>Protobuf support for phenopackets based on square/wire.</description>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>com.squareup.wire</groupId>
+        <artifactId>wire-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>generate-sources</goal>
+            </goals>
+            <configuration>
+              <protoFiles>
+                <param>phenopacket-api.proto</param>
+                <param>phenopacket-model.proto</param>
+              </protoFiles>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+  <dependencies>
+    <dependency>
+      <groupId>com.squareup.wire</groupId>
+      <artifactId>wire-runtime</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>

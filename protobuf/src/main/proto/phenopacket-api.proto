@@ -1,0 +1,20 @@
+syntax = "proto2";
+
+option java_package = "org.phenopackets.protobuf.api";
+
+import "phenopacket-model.proto";
+
+// org.phenopackets.api.PhenoPacket
+
+// Message for org.phenopackets.api.PhenoPacket
+message PhenoPacket {
+  optional string id = 1;
+  optional string title = 2;
+  repeated Entity entities = 3;
+  repeated Variant variants = 4;
+  repeated Person persons = 5;
+  repeated Organism organisms = 6;
+  repeated PhenotypeAssociation phenotype_profile = 7;
+  repeated DiseaseOccurrenceAssociation diagnosis_profile = 8;
+  repeated EnvironmentAssociation environment_profile = 9;
+}
