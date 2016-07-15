@@ -10,7 +10,7 @@
   <artifactId>phenopackets-protobuf-wire</artifactId>
   <packaging>jar</packaging>
 
-  <name>phenopacket-protobuf-wire</name>
+  <name>phenopackets-protobuf-wire</name>
   <description>Protobuf support for phenopackets based on square/wire.</description>
 
   <build>
